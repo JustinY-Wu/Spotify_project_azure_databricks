@@ -1,0 +1,9 @@
+{
+	"name": "FactoryAzurePorject",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b3ab6aa7-85a8-48f9-8894-9c40a5c8cf03",
+		"tenantId": "0cb25ab1-8760-4ba3-94a6-8ca9bad94a23"
+	}
+}
