@@ -201,8 +201,6 @@
 			{
 				"name": "max_cdc",
 				"type": "Script",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Azure sql to lake",
@@ -228,7 +226,7 @@
 						{
 							"type": "Query",
 							"text": {
-								"value": "select max(@{pipeline().parameters.cdc_col}) as cdc from \n@{pipeline().parameters.schema}.@{pipeline().parameters.table}",
+								"value": "select max(@{pipeline().parameters.cdc_col}) as cdc from @{pipeline().parameters.schema}.@{pipeline().parameters.table}",
 								"type": "Expression"
 							}
 						}
