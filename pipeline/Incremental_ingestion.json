@@ -130,11 +130,57 @@
 				}
 			},
 			{
-				"name": "If Condition1",
+				"name": "If_incremental_data",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Azure sql to lake",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@greater(activity('Azure sql to lake').output.dataRead,0)",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Delete_empty_file",
+							"type": "Delete",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "Parquet_dynamic",
+									"type": "DatasetReference",
+									"parameters": {
+										"Container": "bronze",
+										"folder": {
+											"value": "@pipeline().parameters.table",
+											"type": "Expression"
+										},
+										"file": "@{concat(pipeline().parameters.table,'_',variables('Curent'))}"
+									}
+								},
+								"enableLogging": false,
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "update_last_cdc",
