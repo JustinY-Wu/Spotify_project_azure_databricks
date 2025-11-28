@@ -16,7 +16,7 @@
 
 | Layer | Technology | Purpose |
 |-------|------------|---------|
-| **Orchestration** | Azure Data Factory | Data pipeline orchestration |
+| **Orchestration & Ingestion** | Azure Data Factory | Data pipeline orchestration |
 | **Transformation** | Azure Databricks, PySpark | Data processing & transformations |
 | **Storage** | Azure Data Lake Storage | Raw and processed data storage |
 | **Data Warehouse** | Azure Synapse Analytics | Analytics and reporting |
