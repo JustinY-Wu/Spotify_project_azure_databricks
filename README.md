@@ -24,22 +24,23 @@
 | **Data Catalog** | Unity Catalog | Metadata management |
 
 ## Project Structure
-spotify-data-platform/
-├── adf-pipelines/ # Azure Data Factory pipelines
-│ ├── bronze/
-│ ├── silver/
-│ └── gold/
-├── databricks/
-│ ├── notebooks/
-│ │ ├── bronze_to_silver/
-│ │ ├── silver_to_gold/
-│ │ └── utilities/
-│ ├── scripts/
-│ └── config/
-├── schemas/ # Data schemas and DDL
-├── cicd/ # CI/CD pipelines
-├── docs/ # Documentation
-└── tests/ # Unit and integration tests
+
+- `spotify-data-platform/`
+  - `adf-pipelines/`
+    - `bronze/`
+    - `silver/`
+    - `gold/`
+  - `databricks/`
+    - `notebooks/`
+      - `bronze_to_silver/`
+      - `silver_to_gold/`
+      - `utilities/`
+    - `scripts/`
+    - `config/`
+  - `schemas/`
+  - `cicd/`
+  - `docs/`
+  - `tests/`
 
 
 ## Data Pipeline Details
