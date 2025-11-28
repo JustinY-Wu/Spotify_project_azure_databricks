@@ -1,9 +1,9 @@
 # Spotify_project_azure_databricks
 
-Data Architecture
+##Data Architecture
 <img width="1217" height="645" alt="ADF_DataBricks_Data_Architecture drawio" src="https://github.com/user-attachments/assets/dbf82af8-ef01-4a3f-8924-61d281c26b4d" />
 
-Data Flow
+##Data Flow
 Extract: Raw data ingestion via Azure Data Factory
 
 Bronze Layer: Raw data storage in source format
@@ -14,7 +14,7 @@ Gold Layer: Business-level aggregates and models
 
 Serve: Data warehouse for consumption
 
-🛠️ Technology Stack
+##Technology Stack
 Layer	Technology	Purpose
 Orchestration	Azure Data Factory	Data pipeline orchestration
 Transformation	Azure Databricks, PySpark	Data processing & transformations
@@ -23,7 +23,7 @@ Data Warehouse	Azure Synapse Analytics	Analytics and reporting
 Version Control	GitHub	CI/CD and collaboration
 Data Catalog	Unity Catalog	Metadata management
 
-📁 Project Structure
+##Project Structure
 text
 spotify-data-platform/
 ├── adf-pipelines/                 # Azure Data Factory pipelines
@@ -41,7 +41,8 @@ spotify-data-platform/
 ├── cicd/                         # CI/CD pipelines
 ├── docs/                         # Documentation
 └── tests/                        # Unit and integration tests
-🔄 Data Pipeline Details
+
+##Data Pipeline Details
 Bronze Layer (Raw Data)
 Purpose: Store raw data in original format
 
@@ -87,7 +88,7 @@ Data mart creation
 
 Technologies: Delta Lake, Azure Synapse
 
-🚀 Key Features
+##Key Features
 Dynamic Data Pipelines
 Metadata-driven pipelines using Jinja templates
 
@@ -114,3 +115,6 @@ Automated testing and deployment
 Environment promotion (Dev → Staging → Prod)
 
 Infrastructure as Code (Terraform/ARM templates)
+
+##License
+This project is licensed under the MIT License - see the LICENSE file for details.
